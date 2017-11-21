@@ -126,30 +126,40 @@
         ctx.rotate(Math.PI/2 + this.r);
         ctx.beginPath();
 
+        // right side of the turtle
         var points = [
-          [0, -20], // Head
-          [2.5, -17],
-          [3, -12],
-
-          [6, -10],
-          [9, -13], // Arm
-          [13, -12],
-          [18, -4],
-          [18, 0],
-          [14, -1],
-          [10, -7],
-
-          [8, -6], // Shell
-          [10, -2],
-          [9, 3],
-          [6, 10],
-
-          [9, 13], // Foot
-          [6, 15],
-          [3, 12],
-
-          [0, 13],
+            // x, y
+            [0, 1],
+            [2, 3],
+            [2, 5],
+            [1, 6],
+            [1, 7],
+            [3, 9],
+            [4, 9],
+            [5, 10],
+            [7, 8],
+            [9, 8],
+            [9, 9],
+            [6, 12],
+            [6, 13],
+            [7, 14],
+            [7, 17],
+            [6, 18],
+            [6, 19],
+            [5, 20],
+            [8, 23],
+            [8, 24],
+            [6, 24],
+            [4, 22],
+            [3, 22],
+            [1, 24],
+            [0, 24]
         ];
+
+        for (var i = 0; i < points.length; i++) {
+            points[i][1] = 1.5 * points[i][1] - 24;
+            points[i][0] = 1.5 * points[i][0];
+        }
 
         points.concat(points.slice(1, -1).reverse().map(invert))
           .forEach(function(pair, index) {
@@ -157,7 +167,9 @@
           });
 
         ctx.closePath();
-        ctx.stroke();
+        /*ctx.stroke();
+         */
+        ctx.fill();
 
         ctx.restore();
       }
