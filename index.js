@@ -29,7 +29,7 @@ var logo, turtle;
 
 // Later scripts may override this to customize the examples.
 // Leave it exposed as a global.
-var examples = 'examples.txt';
+var examples = 'examples_rus.txt';
 
 
 //
@@ -589,6 +589,9 @@ window.addEventListener('DOMContentLoaded', function() {
         savehook(name, def);
       }
     });
+
+  install_logo_russian_language_support(logo);
+
   logo.run('cs');
   initStorage(function (def) {
     logo.run(def);
